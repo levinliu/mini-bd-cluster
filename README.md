@@ -11,6 +11,15 @@ Vagrant with CentOS7
 
 
 # 2. Start
+
+## 2.1 Preparation 
+Download the following package into resources folder as we cannot upload bi files (>100mb), they are:
+- [jdk](http://download.oracle.com/otn-pub/java/jdk/8u25-b17/jdk-8u191-linux-i586.tar.gz)
+- [hadoop](http://apache.crihan.fr/dist/hadoop/common/stable/hadoop-2.7.7.tar.gz)
+- [spark](http://d3kbcqa49mib13.cloudfront.net/spark-2.4.6-bin-hadoop2.4.tgz)
+
+## 2.2 Build the cluster nodes
+
 1. Run ```vagrant up``` to create the VM.
 2. Run ```vagrant ssh``` to get into your VM.
 3. Run ```vagrant destroy``` when you want to destroy and get rid of the VM.
