@@ -6,7 +6,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	r = numNodes..1
 	(r.first).downto(r.last).each do |i|
 		config.vm.define "node-#{i}" do |node|
-			#node.vm.box = "brianbirkinbine-centos65"
 			node.vm.box = "centos7"
 			node.vm.provider "virtualbox" do |v|
 			  v.name = "node#{i}"
@@ -18,8 +17,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 				node.vm.network :private_network, ip: "10.211.55.1#{i}"
 			end
 			node.vm.hostname = "node#{i}"
-      #node.vm.provision "file", source: "scripts", destination: "$HOME/scripts"
-      #node.vm.provision "file", source: "resources", destination: "$HOME/resources"
 			node.vm.provision "shell", path: "scripts/setup-centos-network-c7.sh"
 			node.vm.provision "shell", path: "scripts/setup-os.sh"
 			node.vm.provision "shell" do |s|
